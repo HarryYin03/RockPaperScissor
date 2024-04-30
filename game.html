@@ -1,53 +1,30 @@
 <!DOCTYPE html>
-<head>
-    <title>Rock Paper Scissor</title>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="game.css">
+    </head>
+
+    <script src = "game.js"></script>
+</html>
+<!-- <head>
+    <title>Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/4f8fc51de1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Rock Paper Scissor</h1>
-    <button onclick="myFunction()">Try</button>
-    <p id = "demo"></p>
-</body>
-<script>
-    let humanScore = 0;
-    let computerScore = 0;
-    function getComputerChoice(){
-        let randomNum = Math.floor(Math.random() * 3) + 1;
-        switch(randomNum){
-        case 1:
-            return "rock";
-        case 2:
-            return "paper";
-        case 3:
-            return "scissor";
-        }
-    }
-    function getHumanChoice(){
-        let choice = parseInt(prompt("Enter your choice: 1 for rock, 2 for paper, 3 for scissor"));
-        switch(choice){
-        case 1:
-            return "rock";
-        case 2:
-            return "paper";
-        case 3:
-            return "scissor";
-        }
-    }
-    function myFunction(){
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        let result;
-        if(humanChoice === computerChoice){
-            result = "It is a tie";
-        }
-        else if(humanChoice === "rock" && computerChoice === "scissor" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissor" && computerChoice === "paper"){
-            result = "You win";
-            humanScore++;
-        }
-        else{
-            result = "You lose";
-            computerScore++;
-        }
-        document.getElementById("demo").innerHTML = "Human: " + humanChoice + "<br>Computer: " + computerChoice + "<br>" + result + "<br>Human Score: " + humanScore + "<br>Computer Score: " + computerScore;
-    }
-    
-</script>
+    <div class = "choice-container">
+        <button id = "rock">Rock</button>
+        <button id = "paper">Paper</button>
+        <button id="scissors">Scissors</button>
+    </div>
+    <div class = "result-container">
+        <span class = "com-choice">Computer Choose: </span>
+        <span class = "player-choice">Player Choose: </span>
+        <br>
+        <span class = "round">Round: </span>
+        <span class = "player-score">Player Score: </span>
+        <span class = "com-score">Cpu Score: </span>
+</body> 
