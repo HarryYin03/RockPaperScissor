@@ -1,53 +1,22 @@
 <!DOCTYPE html>
-<head>
-    <title>Rock Paper Scissor</title>
-</head>
-<body>
-    <h1>Rock Paper Scissor</h1>
-    <button onclick="myFunction()">Try</button>
-    <p id = "demo"></p>
-</body>
-<script>
-    let humanScore = 0;
-    let computerScore = 0;
-    function getComputerChoice(){
-        let randomNum = Math.floor(Math.random() * 3) + 1;
-        switch(randomNum){
-        case 1:
-            return "rock";
-        case 2:
-            return "paper";
-        case 3:
-            return "scissor";
-        }
-    }
-    function getHumanChoice(){
-        let choice = parseInt(prompt("Enter your choice: 1 for rock, 2 for paper, 3 for scissor"));
-        switch(choice){
-        case 1:
-            return "rock";
-        case 2:
-            return "paper";
-        case 3:
-            return "scissor";
-        }
-    }
-    function myFunction(){
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        let result;
-        if(humanChoice === computerChoice){
-            result = "It is a tie";
-        }
-        else if(humanChoice === "rock" && computerChoice === "scissor" || humanChoice === "paper" && computerChoice === "rock" || humanChoice === "scissor" && computerChoice === "paper"){
-            result = "You win";
-            humanScore++;
-        }
-        else{
-            result = "You lose";
-            computerScore++;
-        }
-        document.getElementById("demo").innerHTML = "Human: " + humanChoice + "<br>Computer: " + computerChoice + "<br>" + result + "<br>Human Score: " + humanScore + "<br>Computer Score: " + computerScore;
-    }
+<html>
+    <head>
+        <title>Rock Paper Scissor</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel= "stylesheet" href = https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css>
+    </head>
+    <body>
+        <div class = "button-container">
+            <button id = "rock"><i class="fa-solid fa-hand-back-fist"></i></button>
+            <button id = "paper"><i class="fa-solid fa-hand"></i></button>
+            <button id = "scissors"><i class="fa-solid fa-hand-scissors"></i></button>
+        </div>
+        <div id = "result"></div>
+        <div class = "reset-button">
+            <button id = "reset">Reset</button>
+        </div>
+        <script src = "game.js"></script>
+    </body>
     
-</script>
+</html>
